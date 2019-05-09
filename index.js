@@ -30,6 +30,31 @@
 
 const balanced = str => {
   // your code here. Enjoy the music.
+
+  let dict = {
+    '(': ')',
+    '{': '}',
+    '[': ']'
+  };
+  
+  if (str.length % 2 === 1 || !(str[0] in dict)) return false;
+
+  let temp = [];
+  let counter = 0;
+
+  for (let i=0; i<(str.length/2 - 1); i++) {
+    if (str[i] in dict) {
+      let opp = dict[str[i]];
+      temp.unshift(opp)
+      counter++;
+    }
+    else {
+      if (str[i] !== temp.shift()) return false;
+    }
+  }
+
+  return true;
+
 };
 
 module.exports = balanced;
