@@ -28,8 +28,8 @@
 // When done, make sure you're working on a forked repo, push your
 // changes to your forked repo and submit a pull request.
 
-function balanced(str) {
+const balanced = str => {
   // your code here. Enjoy the music.
-}
+};
 
 module.exports = balanced;
